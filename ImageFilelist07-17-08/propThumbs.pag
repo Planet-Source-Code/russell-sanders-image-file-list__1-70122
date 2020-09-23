@@ -1,0 +1,374 @@
+VERSION 5.00
+Begin VB.PropertyPage propThumbs 
+   Caption         =   "propThumbs"
+   ClientHeight    =   4080
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   7215
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   4080
+   ScaleWidth      =   7215
+   Begin VB.CheckBox chkAllowSizing 
+      Caption         =   "Allow runtime sizing?"
+      Height          =   255
+      Left            =   5040
+      TabIndex        =   27
+      Top             =   3360
+      Width           =   1815
+   End
+   Begin VB.CheckBox chkAllowMenu 
+      Caption         =   "Use Built in Menu?"
+      Height          =   255
+      Left            =   3120
+      TabIndex        =   25
+      Top             =   3360
+      Width           =   1815
+   End
+   Begin VB.CheckBox chkAllowChanges 
+      Caption         =   "Allow Changes To Files?"
+      Height          =   255
+      Left            =   3120
+      TabIndex        =   24
+      Top             =   3720
+      Width           =   2055
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   "Thumb Size Options"
+      Height          =   1995
+      Left            =   60
+      TabIndex        =   17
+      Top             =   1980
+      Width           =   2805
+      Begin VB.CheckBox chkMaintainRatio 
+         Caption         =   "maintain ration for thumbs."
+         Height          =   255
+         Left            =   240
+         TabIndex        =   26
+         Top             =   1680
+         Width           =   2415
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "Small"
+         Height          =   285
+         Index           =   0
+         Left            =   210
+         TabIndex        =   22
+         Top             =   330
+         Width           =   765
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "Medium"
+         Height          =   285
+         Index           =   1
+         Left            =   990
+         TabIndex        =   21
+         Top             =   330
+         Width           =   945
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "Large"
+         Height          =   285
+         Index           =   2
+         Left            =   1950
+         TabIndex        =   20
+         Top             =   330
+         Width           =   795
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "Custom"
+         Height          =   285
+         Index           =   3
+         Left            =   270
+         TabIndex        =   19
+         Top             =   1320
+         Width           =   885
+      End
+      Begin VB.TextBox txtDrawSize 
+         Appearance      =   0  'Flat
+         Height          =   285
+         Left            =   1560
+         TabIndex        =   18
+         Top             =   1320
+         Width           =   735
+      End
+      Begin VB.Label Label1 
+         Caption         =   "NOTE: When using custom sizes anything over 200 will start to slow the updateing."
+         Height          =   645
+         Left            =   420
+         TabIndex        =   23
+         Top             =   660
+         Width           =   2055
+      End
+   End
+   Begin VB.ComboBox txtAppearance 
+      Height          =   315
+      Left            =   4050
+      TabIndex        =   16
+      Top             =   2460
+      Width           =   2655
+   End
+   Begin VB.ComboBox cmb 
+      Height          =   315
+      Left            =   4050
+      TabIndex        =   15
+      Top             =   2820
+      Width           =   2655
+   End
+   Begin VB.Frame Frame 
+      Caption         =   "File Type Options."
+      Height          =   1785
+      Left            =   60
+      TabIndex        =   5
+      Top             =   120
+      Width           =   7035
+      Begin VB.CommandButton Command1 
+         Caption         =   "Browse"
+         Height          =   285
+         Left            =   5970
+         TabIndex        =   14
+         Top             =   330
+         Width           =   915
+      End
+      Begin VB.TextBox txtpath 
+         Appearance      =   0  'Flat
+         Height          =   240
+         Left            =   630
+         TabIndex        =   12
+         Top             =   330
+         Width           =   5220
+      End
+      Begin VB.CheckBox chkHidden 
+         Caption         =   "Hidden"
+         Height          =   285
+         Left            =   3720
+         TabIndex        =   11
+         Top             =   1350
+         Width           =   2700
+      End
+      Begin VB.TextBox txtFileType 
+         Appearance      =   0  'Flat
+         Height          =   255
+         Left            =   120
+         TabIndex        =   9
+         Top             =   930
+         Width           =   6780
+      End
+      Begin VB.CheckBox chkNormal 
+         Caption         =   "Normal"
+         Height          =   285
+         Left            =   120
+         TabIndex        =   8
+         Top             =   1350
+         Width           =   1050
+      End
+      Begin VB.CheckBox chkReadOnly 
+         Caption         =   "ReadOnly"
+         Height          =   285
+         Left            =   2460
+         TabIndex        =   7
+         Top             =   1350
+         Width           =   1140
+      End
+      Begin VB.CheckBox chkSystem 
+         Caption         =   "System"
+         Height          =   285
+         Left            =   1230
+         TabIndex        =   6
+         Top             =   1350
+         Width           =   1020
+      End
+      Begin VB.Label lblpath 
+         Caption         =   "path:"
+         Height          =   240
+         Left            =   120
+         TabIndex        =   13
+         Top             =   360
+         Width           =   450
+      End
+      Begin VB.Label lblFileType 
+         Caption         =   "FileType by extension seperated by a semicolon.: ""*.bmp;*.gif;*.jpg"""
+         Height          =   240
+         Left            =   120
+         TabIndex        =   10
+         Top             =   720
+         Width           =   6030
+      End
+   End
+   Begin VB.TextBox txtBorderWidth 
+      Appearance      =   0  'Flat
+      Height          =   285
+      Left            =   6390
+      TabIndex        =   2
+      Top             =   2100
+      Width           =   390
+   End
+   Begin VB.CheckBox chkEnabled 
+      Caption         =   "Enabled"
+      Height          =   285
+      Left            =   5760
+      TabIndex        =   0
+      Top             =   3720
+      Width           =   930
+   End
+   Begin VB.Shape Shape1 
+      BorderColor     =   &H000000FF&
+      BorderWidth     =   2
+      Height          =   405
+      Left            =   6330
+      Top             =   2040
+      Width           =   525
+   End
+   Begin VB.Label lblBorderStyle 
+      Caption         =   "BorderStyle:"
+      Height          =   240
+      Left            =   3000
+      TabIndex        =   4
+      Top             =   2880
+      Width           =   930
+   End
+   Begin VB.Label lblAppearance 
+      Caption         =   "Appearance:"
+      Height          =   240
+      Left            =   3000
+      TabIndex        =   3
+      Top             =   2520
+      Width           =   1050
+   End
+   Begin VB.Label lblBorderWidth 
+      Caption         =   "Set the BorderWidth of the selection square:"
+      Height          =   240
+      Left            =   3030
+      TabIndex        =   1
+      Top             =   2130
+      Width           =   3210
+   End
+End
+Attribute VB_Name = "propThumbs"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub chkAllowChanges_Click()
+    Changed = True
+End Sub
+
+Private Sub chkAllowMenu_Click()
+    Changed = True
+End Sub
+
+Private Sub chkAllowSizing_Click()
+    Changed = True
+End Sub
+
+Private Sub chkMaintainRatio_Click()
+    Changed = True
+End Sub
+
+Private Sub cmb_Change()
+    Changed = True
+End Sub
+
+Private Sub Command1_Click()
+On Error Resume Next
+Dim NewFolder As String
+    CD.hOwner = PropertyPage.hWnd
+    NewFolder = CD.BrowseForFolder("Select a folder to copy to.", App.path)
+        If Not NewFolder = "" Then txtpath.Text = NewFolder
+End Sub
+
+Private Sub Option1_Click(Index As Integer)
+    txtDrawSize.Text = IIf(Index = 0, 50, IIf(Index = 1, 75, IIf(Index = 2, 125, Val(txtDrawSize.Text))))
+    Changed = True
+End Sub
+
+Public Sub PropertyPage_Initialize()
+    Caption = "Image File List Properties"
+    cmb.AddItem "0-None"
+    cmb.AddItem "1-Fixed"
+    txtAppearance.AddItem "0-Flat"
+    txtAppearance.AddItem "1-Three_D"
+End Sub
+
+Private Sub txtAppearance_Click()
+    Changed = True
+End Sub
+
+Private Sub chkSystem_Click()
+    Changed = True
+End Sub
+
+Private Sub chkReadOnly_Click()
+    Changed = True
+End Sub
+
+Private Sub chkNormal_Click()
+    Changed = True
+End Sub
+
+Private Sub chkHidden_Click()
+    Changed = True
+End Sub
+
+Private Sub txtBorderWidth_Change()
+    Changed = True
+    If Val(txtBorderWidth.Text) > 0 Then Shape1.BorderWidth = Val(txtBorderWidth.Text)
+End Sub
+
+Private Sub txtpath_Change()
+    Changed = True
+End Sub
+
+Private Sub chkEnabled_Click()
+    Changed = True
+End Sub
+
+Private Sub txtFileType_Change()
+    Changed = True
+End Sub
+
+Private Sub PropertyPage_ApplyChanges()
+    Loading = True
+    SelectedControls(0).MaintainRatio = (chkMaintainRatio.value = vbChecked)
+    SelectedControls(0).Menu = (chkAllowMenu.value = vbChecked)
+    SelectedControls(0).AllowSizing = (chkAllowSizing.value = vbChecked)
+    SelectedControls(0).AllowChanges = (chkAllowChanges.value = vbChecked)
+    SelectedControls(0).BorderStyle = cmb.ListIndex
+    SelectedControls(0).Appearance = txtAppearance.ListIndex
+    SelectedControls(0).System = (chkSystem.value = vbChecked)
+    SelectedControls(0).ReadOnly = (chkReadOnly.value = vbChecked)
+    SelectedControls(0).Normal = (chkNormal.value = vbChecked)
+    SelectedControls(0).Hidden = (chkHidden.value = vbChecked)
+    SelectedControls(0).BorderWidth = txtBorderWidth.Text
+    SelectedControls(0).Enabled = (chkEnabled.value = vbChecked)
+    SelectedControls(0).FileType = txtFileType.Text
+    SelectedControls(0).curDrawSize = Val(txtDrawSize.Text)
+    SelectedControls(0).tmbSize = IIf(Option1(0).value = True, 0, IIf(Option1(1).value = True, 1, IIf(Option1(2).value = True, 2, 3)))
+    Loading = False
+    SelectedControls(0).path = txtpath.Text
+End Sub
+
+Private Sub PropertyPage_SelectionChanged()
+    chkMaintainRatio.value = (SelectedControls(0).MaintainRatio And vbChecked)
+    chkAllowSizing.value = (SelectedControls(0).AllowSizing And vbChecked)
+    chkAllowMenu.value = (SelectedControls(0).Menu And vbChecked)
+    chkAllowChanges.value = (SelectedControls(0).AllowChanges And vbChecked)
+    cmb.ListIndex = SelectedControls(0).BorderStyle
+    txtAppearance.ListIndex = SelectedControls(0).Appearance
+    chkSystem.value = (SelectedControls(0).System And vbChecked)
+    chkReadOnly.value = (SelectedControls(0).ReadOnly And vbChecked)
+    chkNormal.value = (SelectedControls(0).Normal And vbChecked)
+    chkHidden.value = (SelectedControls(0).Hidden And vbChecked)
+    txtBorderWidth.Text = SelectedControls(0).BorderWidth
+    Shape1.BorderWidth = SelectedControls(0).BorderWidth
+    Shape1.BorderColor = SelectedControls(0).BorderColor
+    txtDrawSize.Text = SelectedControls(0).curDrawSize
+    txtpath.Text = SelectedControls(0).path
+    chkEnabled.value = (SelectedControls(0).Enabled And vbChecked)
+    txtFileType.Text = SelectedControls(0).FileType
+    Option1(SelectedControls(0).tmbSize).value = True
+    Changed = False
+End Sub
+
+
